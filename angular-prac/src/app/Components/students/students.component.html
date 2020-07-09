@@ -1,0 +1,31 @@
+<div *ngIf = "model1 === true">
+<table id='stud'>
+    <thead>
+        <th>S.No</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Age</th>
+        <th>Department</th>
+        <th></th>
+    </thead>
+    <tbody *ngFor="let students of student; let i = index"> 
+        <tr>
+            <td>{{i+1}}</td>
+            <td>{{students.Fname}}</td>
+            <td>{{students.Lname}}</td>
+            <td>{{students.Age}}</td>
+            <td>{{students.Department}}</td>
+            <td><button (click)="OnClick(i)" data-toggle="modal" data-target="#exampleModal">
+                View
+              </button></td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<div *ngIf = "model2 === true">
+    <input type="text" [(ngModel)]="Fname" ><br/>
+    <input type="text" [(ngModel)]="Lname" ><br/>
+    <input type="text" [(ngModel)]="Age" ><br/>
+    <input type="text" [(ngModel)]="Depart" ><br/>
+    <button type="submit" (click)="Close()">Close</button>
+</div>

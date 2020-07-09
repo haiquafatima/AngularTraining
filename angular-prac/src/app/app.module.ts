@@ -8,6 +8,8 @@ import { FooterComponent } from './Components/footer/footer.component';
 import { ContentComponent } from './Components/content/content.component';
 import { Task1Component } from './Components/Task1-Ass2/task.component';
 import { Task2Ass2Component } from './Components/task2-ass2/task2-ass2.component';
+import { StudentsComponent } from './Components/students/students.component';
+import { FormsModule } from '@angular/forms'; //Use For Modal;
 
 
 @NgModule({
@@ -18,10 +20,12 @@ import { Task2Ass2Component } from './Components/task2-ass2/task2-ass2.component
     ContentComponent,
     Task1Component,
     Task2Ass2Component,
+    StudentsComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
