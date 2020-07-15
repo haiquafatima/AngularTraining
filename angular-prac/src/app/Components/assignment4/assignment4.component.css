@@ -1,0 +1,58 @@
+#stud {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #stud td, #stud th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #stud tr:nth-child(even){
+    background-color: #c18dd1;
+  }
+  
+  #stud tr:hover {
+    background-color: #ddd;
+  }
+  
+  #stud th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #713b91;
+    color: rgb(241, 227, 248);
+  }
+
+  input[type=text],input[type=number], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  button[type=submit] {
+    width: 100%;
+    background-color: #854cac;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button[type=submit]:hover {
+    background-color: #7d3892;
+  }
+
+  div {
+    margin: auto;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
