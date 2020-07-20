@@ -1,0 +1,69 @@
+<form [formGroup]="form">
+    <label>First Name : </label>
+    <input type="text" placeholder="First name" formControlName="fname"/>
+    <div *ngIf="form.controls.fname.invalid && (form.controls.fname.dirty || form.controls.fname.touched ) ">
+        <span>First Name is Required</span>
+    </div>
+    <br/>
+
+    <label>Last Name : </label>
+    <input type="text" placeholder="Last name" formControlName="lname"/>
+    <br/>
+
+    <label>Age : </label>
+    <input type="number" placeholder="Age" formControlName="age"/>
+    <div *ngIf="form.controls.age.invalid && (form.controls.age.dirty || form.controls.age.touched ) ">
+        <span *ngIf="form.controls.age.errors?.max">Age must be smaller than 60</span>
+    </div>
+    <br/>
+
+    <label>Department : </label>
+    <input type="text" placeholder="Department" formControlName="department"/><br/><br/>
+    
+    <label>City : </label>
+    <select formControlName="city" name="city" id="city">
+        <option value="Karachi">Karachi</option>
+        <option value="Islamabad">Islamabad</option>
+        <option value="Lahore">Lahore</option>
+        <option value="Kashmir">Kashmir</option>
+    </select>
+  <br>
+
+    <label>Student : </label>
+  
+    <input type="radio" formControlName="isvalid" name="isvalid" value="Yes"/>
+    <label class="container">Yes</label>
+    <input type="radio" formControlName="isvalid" name="isvalid" value="No"/>
+    <label class="container">No</label>
+    <br/>
+
+    <button type=submit (click)="Submit()" [disabled]="!form.valid">Submit</button>
+   
+</form>
+<div>
+    <table id='stud'>
+        <thead>
+            <th>S. No</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Age</th>
+            <th>Department</th>
+            <th>City</th>
+            <th>Student</th>
+            <th>Action</th>
+        </thead>
+        <tbody *ngFor="let student of students; let i = index"> 
+            <tr>
+                <td>{{i+1}}</td>
+                <td>{{student.fname}}</td>
+                <td>{{student.lname}}</td>
+                <td>{{student.age}}</td>
+                <td>{{student.department}}</td>
+                <td>{{student.city}}</td>
+                <td>{{student.isvalid}}</td>
+                <td><button type=submit [routerLink]="['/students',student]">View Students</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

@@ -1,0 +1,18 @@
+<div>
+    <form [formGroup] = "form">
+    <label>Username : </label>
+    <input type="text" placeholder="Username" formControlName="username"/>
+    <span class="mandatory" *ngIf="form.controls.username.invalid && (form.controls.username.dirty || form.controls.username.touched ) ">
+        Username is Required</span>
+    <br/><br/>
+    <label>Password : </label>
+    <input type="password" placeholder="Password" formControlName="password"/>
+    <span class="mandatory" *ngIf="form.controls.password.invalid && (form.controls.password.dirty || form.controls.password.touched ) ">
+        Password is Required</span>
+    <br/><br/>
+    <button type=submit (click)="Submit()" [disabled]="!form.valid">Submit</button>
+    <span class="mandatory" *ngIf="model === true">Incorrect username or password</span>
+    </form>
+</div>
+    
+
